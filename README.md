@@ -1,99 +1,114 @@
 # PortSwigger Web Security Academy Labs
 
-**A practical, continuously evolving record of web application security research and learning.**
+**A practical, continuously evolving record of web application security learning and hands-on research.**
 
-This repository documents my progress through [PortSwigger Web Security Academy](https://portswigger.net/web-security), focusing on understanding web vulnerabilities through hands-on experimentation, technical analysis, and structured documentation.
+This repository documents my progress through [PortSwigger Web Security Academy](https://portswigger.net/web-security). It focuses on understanding how web vulnerabilities work through authorized lab exercises, systematic testing, technical analysis, and clear documentation.
 
-I am studying **Network Infrastructure and Cybersecurity at Jönköping University, Sweden**, and use these labs to strengthen my practical understanding of web application security and develop a systematic approach to identifying, analyzing, and understanding vulnerabilities.
+I study **Network Infrastructure and Cybersecurity at Jönköping University, Sweden**. I use these labs to strengthen my practical understanding of web application security and build a methodical approach to investigating vulnerabilities.
 
-**Connect with me:** [LinkedIn — Matin Sadeghi](https://www.linkedin.com/in/matin-sadeghi-863487321/)
+**Connect:** [LinkedIn — Matin Sadeghi](https://www.linkedin.com/in/matin-sadeghi-863487321/)
+
+## Progress dashboard
+
+<p align="center">
+  <img src="assets/progress-dashboard.svg" alt="PortSwigger Web Security Academy progress dashboard: 33 of 273 labs completed, with Apprentice, Practitioner, and Expert breakdowns" width="100%" />
+</p>
+
+Current snapshot: **33 of 273 labs completed (12.1%)**. These figures reflect my current Academy tracker and are maintained manually in [`PROGRESS.md`](PROGRESS.md). The SVG is a visual snapshot, so update it and the progress file when the counts change.
+
+| Difficulty | Completed | Total | Completion |
+|---|---:|---:|---:|
+| Apprentice | 13 | 61 | 21.3% |
+| Practitioner | 19 | 173 | 11.0% |
+| Expert | 1 | 39 | 2.6% |
+| **Overall** | **33** | **273** | **12.1%** |
+
+**Current focus areas:** SQL injection, access control, path traversal, and web cache deception.
 
 ## Objectives
 
 - Develop practical web application security skills through hands-on labs.
-- Understand the underlying mechanisms behind common web vulnerabilities.
-- Document investigation methodologies, HTTP requests, relevant payloads, and evidence.
-- Analyze root causes and identify appropriate remediation strategies.
-- Track learning progress and identify areas requiring further practice.
-- Build a technical portfolio demonstrating practical knowledge, reasoning, and continuous improvement.
+- Understand the mechanisms behind common web vulnerabilities rather than memorizing payloads.
+- Document investigation methods, relevant HTTP requests, test inputs, and evidence.
+- Analyze root causes and identify suitable remediation strategies.
+- Track progress and identify topics that need further practice.
+- Build a technical portfolio that demonstrates reasoning, reproducibility, and continuous improvement.
 
 ## Topics
 
-My learning focuses on web application vulnerabilities, including:
+My learning covers web application vulnerabilities and security concepts, including:
 
-- SQL Injection
-- Access Control
-- Authentication
-- Path Traversal
-- Cross-Site Scripting (XSS)
-- Server-Side Request Forgery (SSRF)
-- Cross-Site Request Forgery (CSRF)
-- File Upload Vulnerabilities
-- Business Logic Vulnerabilities
-- API Security
-- Other web security topics as my studies progress
+- SQL injection
+- Access control and insecure direct object references (IDOR)
+- Authentication and session management
+- Path traversal
+- Web cache deception
+- Cross-site scripting (XSS)
+- Server-side request forgery (SSRF)
+- Cross-site request forgery (CSRF)
+- File upload vulnerabilities
+- Business logic vulnerabilities
+- API security
 
-This list represents areas of study, not a claim that I have completed labs in each category.
+These are learning areas, not a claim that I have completed labs in every topic. The progress dashboard and [`PROGRESS.md`](PROGRESS.md) provide the current completion snapshot.
 
 ## Methodology
 
-The goal is to understand **why a vulnerability exists, how it can be identified, and how it can be prevented**—not simply to reproduce a successful payload.
+The goal is to understand **why a vulnerability exists, how to identify it, what impact it can have, and how to prevent it**—not simply to reproduce a successful payload.
 
-Where relevant, lab reports will include:
+Where relevant, each lab report will cover:
 
-- **Investigation:** Initial observations, relevant endpoints, parameters, and hypotheses.
-- **Exploitation:** Testing methodology, sanitized HTTP requests, and relevant payloads.
-- **Evidence:** Minimal evidence demonstrating the observed behavior.
-- **Root Cause:** The underlying application weakness.
-- **Remediation:** Practical recommendations for preventing the vulnerability.
-- **Lessons Learned:** Technical insights, unsuccessful approaches, and concepts requiring further study.
+- **Objective and hypothesis:** What the lab tests and what behavior I expect to observe.
+- **Investigation:** Relevant endpoints, parameters, requests, responses, and hypotheses.
+- **Testing and exploitation:** The steps used in the authorized lab, with sanitized requests and relevant payloads.
+- **Evidence:** Minimal evidence that demonstrates the observed behavior.
+- **Root cause:** The underlying application or design weakness.
+- **Remediation:** Practical measures that would prevent or reduce the vulnerability.
+- **Lessons learned:** What worked, what did not, and what I would investigate next.
 
-Each report will distinguish between independently solved labs and solutions completed with hints or external assistance.
+Reports will distinguish between labs solved independently and those completed with hints or external assistance. The aim is to document the learning process honestly and make each write-up reproducible.
 
-## Tools & Environment
+## Tools and environment
 
-Tools used throughout my practical work may include:
+Tools used in my practical work may include:
 
-- **Kali Linux** — Security testing environment.
+- **Kali Linux** — security testing environment.
 - **Burp Suite** — HTTP interception, request analysis, and manual testing.
-- **sqlmap** — Automated SQL injection testing in authorized lab environments.
-- **curl** — Command-line HTTP requests and reproducible testing.
-- **Linux command-line tools** — Request analysis, text processing, and supporting tasks.
+- **sqlmap** — automated SQL injection testing in authorized lab environments.
+- **curl** — command-line HTTP requests and reproducible tests.
+- **Linux command-line tools** — request inspection, text processing, and supporting tasks.
 
-The tools used for each lab will be documented individually where relevant.
+The tools actually used for each lab will be recorded in its report where relevant.
 
-## Repository Structure
+## Repository structure
 
 ```text
 portswigger-web-security-labs/
 ├── README.md
 ├── PROGRESS.md
+├── CATEGORY_TAXONOMY.md
+├── LAB_TEMPLATE.md
 ├── METHODOLOGY.md
 ├── TOOLS.md
-└── labs/
-    ├── sql-injection/
-    ├── access-control/
-    ├── authentication/
-    └── ...
+├── assets/
+│   └── progress-dashboard.svg
+├── data/
+│   └── labs.json
+├── labs/
+│   └── README.md
+└── scripts/
+    └── progress.py
 ```
 
-Individual lab reports will be organized by vulnerability category. Additional documentation and evidence will be included when they contribute meaningfully to understanding the investigation.
+Lab reports are intended to be organized by vulnerability category as the repository grows. Supporting data and scripts may evolve alongside the reporting workflow.
 
-The structure will evolve as the repository grows.
+## Scope and ethics
 
-## Progress
+All practical testing documented here is intended for PortSwigger Web Security Academy labs and other explicitly authorized environments. Do not use the techniques documented here against systems without permission.
 
-This repository is a work in progress. New lab reports, technical notes, and lessons learned will be added continuously as I advance through the Academy.
+This is an educational portfolio documenting my personal learning. It does not represent professional penetration-testing experience, and describing a technique does not imply it has been tested against real-world systems.
 
-The emphasis is on **technical understanding, reproducibility, and consistent improvement rather than the number of completed labs**.
-
-## Scope & Ethics
-
-All practical testing documented here is intended for PortSwigger Web Security Academy labs and other explicitly authorized environments.
-
-This repository is an educational portfolio documenting my personal learning. It does not represent professional penetration-testing experience, and documenting a vulnerability technique does not imply that it has been tested against real-world systems.
-
-PortSwigger's original learning materials remain available through the official Academy. This repository focuses on my own investigations, observations, and explanations.
+PortSwigger's original learning materials remain available through the official Academy. This repository focuses on my own investigations, observations, explanations, and lessons learned.
 
 ## References
 
