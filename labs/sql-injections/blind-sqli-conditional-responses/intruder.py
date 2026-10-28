@@ -2,9 +2,9 @@ import requests
 import string
 
 # Replace with your specific lab URL and session cookie
-# url = "https://0a43000803d397b38229c48700220091.web-security-academy.net/"
-# base_tracking_id = "wyK8JFmrRs2J7i9o"
-# session_cookie = "UDqZTWoYTLLw5JuM3qztNCDuYq6YSull"
+url = " "
+base_tracking_id = " "
+session_cookie = " "  
 
 # The lab states the password is 20 characters long and lowercase alphanumeric
 charset = string.ascii_lowercase + string.digits
